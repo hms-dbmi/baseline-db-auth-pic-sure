@@ -1,4 +1,4 @@
-define(["picSure/settings", "text!overrides/not_authorized.hbs", "handlebars"], function(settings, notAuthorizedTemplate, HBS){
+define(["picSure/settings", "handlebars"], function(settings, notAuthorizedTemplate, HBS){
 	return {
 		/*
 		 * This allows you to build any authorization logic you wish.
@@ -30,14 +30,12 @@ define(["picSure/settings", "text!overrides/not_authorized.hbs", "handlebars"], 
 
 		},
 
-        /*
-         * This override allows to configure custom not_authorized page for stack.
-         *
-         * Example configuration: provide custom not_authorized.hbs template in overrides folder and render it similar manner
-         * as login.displayNotAuthorized() function.
-         */
-        displayNotAuthorized: function () {
-            $('#main-content').html(HBS.compile(notAuthorizedTemplate)({helpLink:settings.helpLink}));
-        }
+		/*
+		 * This override allows to configure custom not_authorized page for stack.
+		 *
+		 * Example configuration: provide custom not_authorized.hbs template in overrides folder and render it similar manner
+		 * as login.displayNotAuthorized() function.
+		 */
+		displayNotAuthorized: undefined
 	};
 });
